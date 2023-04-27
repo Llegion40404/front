@@ -5,55 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   </head>
-  <body>
-    <div class="wrap"></div>
-    <button class="button">TEST</button>
-
-    <script>
-      $(document).ready(function () {
-        $(".button").click(function () {
-          $.get(
-            "https://api.technodom.kz/katalog/api/v1/products/category/smartfony?city_id=5f5f1e3b4c8a49e692fefd70&limit=5&sorting=score&price=0",
-            function (data, status) {
-              for (let i = 0; i < 5; i++) {
-                let div = document.createElement("div");
-                div.className = "box";
-                div.innerHTML = ` <div class='inner'><img src="https://www.technodom.kz/_next/image?url=https%3A%2F%2Fapi.technodom.kz%2Ff3%2Fapi%2Fv1%2Fimages%2F272%2F272%2F${data.payload[i].images[0]}.webp&w=384&q=100"/><h3 class='name'>Name: ${data.payload[i].title}</h1><p class='year'>Price: ${data.payload[i].price}<p/><p>Rating: ${data.payload[i].rating}</p></div>`;
-                document.querySelector(".wrap").append(div);
-              }
-            }
-          );
-        });
-      });
-    </script>
-  </body>
+  <body></body>
 </html>
-<style>
-  * {
-    color: white;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
-  }
-  .wrap {
-    padding: 50px 0 0 50px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-  .box {
-    border-radius: 5px;
-    background-color: rgb(0, 83, 83);
-    width: 400px;
-    display: flex;
-  }
-  .name {
-    margin-bottom: 15px;
-  }
-  .inner {
-    padding: 20px;
-  }
-</style>
